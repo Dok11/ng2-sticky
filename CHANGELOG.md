@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.8"></a>
+## [5.3.8](https://github.com/makseo/ng2-sticky/compare/v5.3.7...v5.3.8) (2018-12-03)
+
+
+
 <a name="5.3.7"></a>
 ## [5.3.7](https://github.com/makseo/ng2-sticky/compare/v5.3.4...v5.3.7) (2018-12-03)
 
