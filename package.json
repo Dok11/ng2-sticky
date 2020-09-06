@@ -1,11 +1,11 @@
 {
   "name": "ng2-sticky-kit",
-  "version": "5.3.8",
+  "version": "6.1.0",
   "description": "Angular solution that allows to stick the elements such as header, menu, sidebar or any other block on the page.",
-  "main": "./bundles/ng2-sticky-kit.umd.js",
-  "module": "./ng2-sticky-kit.es5.js",
-  "es2015": "./ng2-sticky-kit.js",
-  "typings": "./ng2-sticky-kit.d.ts",
+  "main": "./dist/bundles/ng2-sticky-kit.umd.js",
+  "module": "./dist/ng2-sticky-kit.es5.js",
+  "es2015": "./dist/ng2-sticky-kit.js",
+  "typings": "./dist/ng2-sticky-kit.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/makseo/ng2-sticky.git"
@@ -52,7 +52,7 @@
     "release": "standard-version"
   },
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <7.0.0"
+    "@angular/core": ">=5.0.0"
   },
   "devDependencies": {
     "@angular/common": "6.0.0",
