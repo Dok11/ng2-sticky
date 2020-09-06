@@ -15,7 +15,7 @@ export declare class StickyComponent implements OnInit, AfterViewInit {
     activated: EventEmitter<{}>;
     deactivated: EventEmitter<{}>;
     reset: EventEmitter<{}>;
-    private isStuck;
+    isStuck: boolean;
     private elem;
     private container;
     private originalCss;
