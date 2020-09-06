@@ -10,7 +10,7 @@ Supports Angular+ versions
 Install with npm:
 
 ```bash
-npm install ng2-sticky-kit --save
+npm install ngx-sticky-kit --save
 ```
 
 Initial development environment:
@@ -67,7 +67,7 @@ app.module.ts
 ```typescript
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {StickyModule} from 'ng2-sticky-kit';
+import {StickyModule} from 'ngx-sticky-kit';
 import {AppComponent} from './app.component';
 
 @NgModule({
@@ -96,4 +96,4 @@ import {Component} from '@angular/core';
 export class DemoComponent { }
 ```
 
-**If you are using system.js, don't forget to add 'ng2-sticky-kit' to your list of packages.**
+**If you are using system.js, don't forget to add 'ngx-sticky-kit' to your list of packages.**
