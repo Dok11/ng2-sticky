@@ -39,7 +39,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'ng2-sticky-kit': {
+      'ngx-sticky-kit': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

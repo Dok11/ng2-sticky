@@ -3,7 +3,7 @@
     "baseDir": "src/demo",
     "routes": {
       "/node_modules": "node_modules",
-      "/ng2-sticky-kit": "src/lib"
+      "/ngx-sticky-kit": "src/lib"
     }
   }
 }

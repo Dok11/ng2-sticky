@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
 	typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
-	(factory((global.ng2StickyKit = {}),global.ng.core));
+	(factory((global.ngxStickyKit = {}),global.ng.core));
 }(this, (function (exports,_angular_core) { 'use strict';
 
 /**
@@ -319,4 +319,4 @@ exports.StickyModule = StickyModule;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=ng2-sticky-kit.umd.js.map
+//# sourceMappingURL=ngx-sticky-kit.umd.js.map

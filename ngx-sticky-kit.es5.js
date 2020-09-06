@@ -4,11 +4,8 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, NgModule, Out
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class StickyComponent {
-    /**
-     * @param {?} element
-     */
-    constructor(element) {
+var StickyComponent = /** @class */ (function () {
+    function StickyComponent(element) {
         this.element = element;
         this.zIndex = 10;
         this.width = 'auto';
@@ -28,28 +25,40 @@ class StickyComponent {
     /**
      * @return {?}
      */
-    ngOnInit() {
+    StickyComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
         this.elem = this.element.nativeElement;
-    }
+    };
     /**
      * @return {?}
      */
-    ngAfterViewInit() {
+    StickyComponent.prototype.ngAfterViewInit = /**
+     * @return {?}
+     */
+    function () {
         // define scroll container as parent element
         this.container = this.elem.parentNode;
         this.defineOriginalDimensions();
         this.sticker();
-    }
+    };
     /**
      * @return {?}
      */
-    onChange() {
+    StickyComponent.prototype.onChange = /**
+     * @return {?}
+     */
+    function () {
         this.sticker();
-    }
+    };
     /**
      * @return {?}
      */
-    defineOriginalDimensions() {
+    StickyComponent.prototype.defineOriginalDimensions = /**
+     * @return {?}
+     */
+    function () {
         this.originalCss = {
             zIndex: this.getCssValue(this.elem, 'zIndex'),
             position: this.getCssValue(this.elem, 'position'),
@@ -62,12 +71,15 @@ class StickyComponent {
         if (this.width === 'auto') {
             this.width = this.originalCss.width;
         }
-    }
+    };
     /**
      * @return {?}
      */
-    defineDimensions() {
-        let /** @type {?} */ containerTop = this.getBoundingClientRectValue(this.container, 'top');
+    StickyComponent.prototype.defineDimensions = /**
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ containerTop = this.getBoundingClientRectValue(this.container, 'top');
         this.windowHeight = window.innerHeight;
         this.elemHeight = this.getCssNumber(this.elem, 'height');
         this.containerHeight = this.getCssNumber(this.container, 'height');
@@ -78,19 +90,25 @@ class StickyComponent {
         else {
             this.scrollFinish = document.body.offsetHeight;
         }
-    }
+    };
     /**
      * @return {?}
      */
-    resetElement() {
+    StickyComponent.prototype.resetElement = /**
+     * @return {?}
+     */
+    function () {
         this.elem.classList.remove(this.stickClass);
         Object.assign(this.elem.style, this.originalCss);
         this.reset.next(this.elem);
-    }
+    };
     /**
      * @return {?}
      */
-    stuckElement() {
+    StickyComponent.prototype.stuckElement = /**
+     * @return {?}
+     */
+    function () {
         this.isStuck = true;
         this.elem.classList.remove(this.endStickClass);
         this.elem.classList.add(this.stickClass);
@@ -104,11 +122,14 @@ class StickyComponent {
             width: this.width
         });
         this.activated.next(this.elem);
-    }
+    };
     /**
      * @return {?}
      */
-    unstuckElement() {
+    StickyComponent.prototype.unstuckElement = /**
+     * @return {?}
+     */
+    function () {
         this.isStuck = false;
         this.elem.classList.add(this.endStickClass);
         this.container.style.position = 'relative';
@@ -121,27 +142,33 @@ class StickyComponent {
             width: this.width
         });
         this.deactivated.next(this.elem);
-    }
+    };
     /**
      * @return {?}
      */
-    matchMediaQuery() {
+    StickyComponent.prototype.matchMediaQuery = /**
+     * @return {?}
+     */
+    function () {
         if (!this.mediaQuery)
             return true;
         return (window.matchMedia('(' + this.mediaQuery + ')').matches ||
             window.matchMedia(this.mediaQuery).matches);
-    }
+    };
     /**
      * @return {?}
      */
-    sticker() {
+    StickyComponent.prototype.sticker = /**
+     * @return {?}
+     */
+    function () {
         // check media query
         if (this.isStuck && !this.matchMediaQuery()) {
             this.resetElement();
             return;
         }
         // detecting when a container's height changes
-        let /** @type {?} */ currentContainerHeight = this.getCssNumber(this.container, 'height');
+        var /** @type {?} */ currentContainerHeight = this.getCssNumber(this.container, 'height');
         if (currentContainerHeight !== this.containerHeight) {
             this.defineDimensions();
         }
@@ -149,7 +176,7 @@ class StickyComponent {
         if (this.elemHeight >= currentContainerHeight) {
             return;
         }
-        let /** @type {?} */ position = this.scrollbarYPos();
+        var /** @type {?} */ position = this.scrollbarYPos();
         // unstick
         if (this.isStuck && (position < this.containerStart || position > this.scrollFinish) || position > this.scrollFinish) {
             this.resetElement();
@@ -160,33 +187,46 @@ class StickyComponent {
         else if (position > this.containerStart && position < this.scrollFinish) {
             this.stuckElement();
         }
-    }
+    };
     /**
      * @return {?}
      */
-    scrollbarYPos() {
+    StickyComponent.prototype.scrollbarYPos = /**
+     * @return {?}
+     */
+    function () {
         return window.pageYOffset || document.documentElement.scrollTop;
-    }
+    };
     /**
      * @param {?} element
      * @param {?} property
      * @return {?}
      */
-    getBoundingClientRectValue(element, property) {
-        let /** @type {?} */ result = 0;
+    StickyComponent.prototype.getBoundingClientRectValue = /**
+     * @param {?} element
+     * @param {?} property
+     * @return {?}
+     */
+    function (element, property) {
+        var /** @type {?} */ result = 0;
         if (element && element.getBoundingClientRect) {
-            let /** @type {?} */ rect = element.getBoundingClientRect();
+            var /** @type {?} */ rect = element.getBoundingClientRect();
             result = (typeof rect[property] !== 'undefined') ? rect[property] : 0;
         }
         return result;
-    }
+    };
     /**
      * @param {?} element
      * @param {?} property
      * @return {?}
      */
-    getCssValue(element, property) {
-        let /** @type {?} */ result = '';
+    StickyComponent.prototype.getCssValue = /**
+     * @param {?} element
+     * @param {?} property
+     * @return {?}
+     */
+    function (element, property) {
+        var /** @type {?} */ result = '';
         if (typeof window.getComputedStyle !== 'undefined') {
             result = window.getComputedStyle(element, '').getPropertyValue(property);
         }
@@ -194,58 +234,67 @@ class StickyComponent {
             result = element.currentStyle[property];
         }
         return result;
-    }
+    };
     /**
      * @param {?} element
      * @param {?} property
      * @return {?}
      */
-    getCssNumber(element, property) {
+    StickyComponent.prototype.getCssNumber = /**
+     * @param {?} element
+     * @param {?} property
+     * @return {?}
+     */
+    function (element, property) {
         if (typeof element === 'undefined')
             return 0;
         return parseInt(this.getCssValue(element, property), 10) || 0;
-    }
-}
-StickyComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'sticky,[sticky]',
-                template: '<ng-content></ng-content>'
-            },] },
-];
-/** @nocollapse */
-StickyComponent.ctorParameters = () => [
-    { type: ElementRef, },
-];
-StickyComponent.propDecorators = {
-    "sticky": [{ type: Input, args: ['sticky',] },],
-    "zIndex": [{ type: Input, args: ['sticky-zIndex',] },],
-    "width": [{ type: Input, args: ['sticky-width',] },],
-    "offsetTop": [{ type: Input, args: ['sticky-offset-top',] },],
-    "offsetBottom": [{ type: Input, args: ['sticky-offset-bottom',] },],
-    "start": [{ type: Input, args: ['sticky-start',] },],
-    "stickClass": [{ type: Input, args: ['sticky-class',] },],
-    "endStickClass": [{ type: Input, args: ['sticky-end-class',] },],
-    "mediaQuery": [{ type: Input, args: ['sticky-media-query',] },],
-    "parentMode": [{ type: Input, args: ['sticky-parent',] },],
-    "orientation": [{ type: Input, args: ['sticky-orientation',] },],
-    "activated": [{ type: Output },],
-    "deactivated": [{ type: Output },],
-    "reset": [{ type: Output },],
-    "onChange": [{ type: HostListener, args: ['window:scroll', ['$event'],] }, { type: HostListener, args: ['window:resize', ['$event'],] }, { type: HostListener, args: ['window:orientationchange', ['$event'],] },],
-};
+    };
+    StickyComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'sticky,[sticky]',
+                    template: '<ng-content></ng-content>'
+                },] },
+    ];
+    /** @nocollapse */
+    StickyComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+    ]; };
+    StickyComponent.propDecorators = {
+        "sticky": [{ type: Input, args: ['sticky',] },],
+        "zIndex": [{ type: Input, args: ['sticky-zIndex',] },],
+        "width": [{ type: Input, args: ['sticky-width',] },],
+        "offsetTop": [{ type: Input, args: ['sticky-offset-top',] },],
+        "offsetBottom": [{ type: Input, args: ['sticky-offset-bottom',] },],
+        "start": [{ type: Input, args: ['sticky-start',] },],
+        "stickClass": [{ type: Input, args: ['sticky-class',] },],
+        "endStickClass": [{ type: Input, args: ['sticky-end-class',] },],
+        "mediaQuery": [{ type: Input, args: ['sticky-media-query',] },],
+        "parentMode": [{ type: Input, args: ['sticky-parent',] },],
+        "orientation": [{ type: Input, args: ['sticky-orientation',] },],
+        "activated": [{ type: Output },],
+        "deactivated": [{ type: Output },],
+        "reset": [{ type: Output },],
+        "onChange": [{ type: HostListener, args: ['window:scroll', ['$event'],] }, { type: HostListener, args: ['window:resize', ['$event'],] }, { type: HostListener, args: ['window:orientationchange', ['$event'],] },],
+    };
+    return StickyComponent;
+}());
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class StickyModule {
-}
-StickyModule.decorators = [
-    { type: NgModule, args: [{
-                declarations: [StickyComponent],
-                exports: [StickyComponent]
-            },] },
-];
+var StickyModule = /** @class */ (function () {
+    function StickyModule() {
+    }
+    StickyModule.decorators = [
+        { type: NgModule, args: [{
+                    declarations: [StickyComponent],
+                    exports: [StickyComponent]
+                },] },
+    ];
+    return StickyModule;
+}());
 
 /**
  * @fileoverview added by tsickle
@@ -261,4 +310,4 @@ StickyModule.decorators = [
  */
 
 export { StickyComponent, StickyModule };
-//# sourceMappingURL=ng2-sticky-kit.js.map
+//# sourceMappingURL=ngx-sticky-kit.es5.js.map

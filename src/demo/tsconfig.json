@@ -6,7 +6,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "paths": {
-      "ng2-sticky-kit": [
+      "ngx-sticky-kit": [
         "../lib"
       ]
     }
