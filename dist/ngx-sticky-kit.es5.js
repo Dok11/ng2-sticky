@@ -163,7 +163,7 @@ var StickyComponent = /** @class */ (function () {
      */
     function () {
         // check media query
-        if (this.isStuck && !this.matchMediaQuery()) {
+        if (!this.matchMediaQuery()) {
             this.resetElement();
             return;
         }
