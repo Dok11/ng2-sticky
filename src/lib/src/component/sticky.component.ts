@@ -139,7 +139,7 @@ export class StickyComponent implements OnInit, AfterViewInit {
     sticker(): void {
 
         // check media query
-        if (this.isStuck && !this.matchMediaQuery()) {
+        if (!this.matchMediaQuery()) {
             this.resetElement();
             return;
         }
