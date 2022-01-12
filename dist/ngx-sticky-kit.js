@@ -100,7 +100,7 @@ class StickyComponent {
             top: this.offsetTop + 'px',
             right: 'auto',
             bottom: 'auto',
-            left: this.getBoundingClientRectValue(this.elem, 'left') + 'px',
+            left: this.getBoundingClientRectValue(this.elem.parentElement, 'left') + 'px',
             width: this.width
         });
         this.activated.next(this.elem);
